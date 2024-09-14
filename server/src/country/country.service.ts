@@ -19,6 +19,22 @@ export class CountryService {
     return { data: await this.fetchData<CountryInfo[]>(url, errorMessage) };
   }
 
+  public async getCountryDetails(countryCode: string) {
+    const url = `${this.nagerApi}/CountryInfo/${countryCode}`;
+    const errorMessage = "Unable to fetch country name!";
+
+    const countryInfo = await this.fetchData<CountryDetails>(url, errorMessage);
+
+    return {
+      data: {
+        countryCode: countryInfo.countryCode,
+        name: countryInfo.commonName,
+        officialName: countryInfo.officialName,
+        region: countryInfo.region,
+      },
+    };
+  }
+
   public async getBorderInfo(countryCode: string) {
     const url = `${this.nagerApi}/CountryInfo/${countryCode}`;
     const errorMessage = "Unable to border info!";

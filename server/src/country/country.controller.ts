@@ -22,4 +22,9 @@ export class CountryController {
   async getFlagURL(@Param("countryCode") countryCode: string) {
     return this.countryService.getFlagURL(countryCode);
   }
+
+  @Get("info/:countryCode")
+  async getCountryNameByCode(@Param("countryCode") countryCode: string) {
+    return this.countryService.getCountryDetails(countryCode);
+  }
 }
