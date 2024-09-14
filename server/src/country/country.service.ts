@@ -46,7 +46,11 @@ export class CountryService {
     };
   }
 
-  public async getPopulationInfo(countryName: string) {
+  public async getPopulationInfo(countryCode: string) {
+    const {
+      data: { commonName },
+    } = await this.getCountryDetails(countryCode);
+
     const url = `${this.countriesNowApi}population`;
     const errorMessage = "Unable to fetch population info!";
 
@@ -55,7 +59,7 @@ export class CountryService {
       errorMessage,
     );
 
-    const searched = populationInfo.data.find((c) => c.country === countryName);
+    const searched = populationInfo.data.find((c) => c.country === commonName);
 
     if (!searched) {
       throw new NotFoundException("Country not found!");
