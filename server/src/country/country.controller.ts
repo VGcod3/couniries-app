@@ -14,9 +14,9 @@ export class CountryController {
   async getBorderInfo(@Param("countryCode") countryCode: string) {
     return this.countryService.getBorderInfo(countryCode);
   }
-  @Get("info/population/:countryName")
-  async getPopulationInfo(@Param("countryName") countryName: string) {
-    return this.countryService.getPopulationInfo(countryName);
+  @Get("info/population/:countryCode")
+  async getPopulationInfo(@Param("countryCode") countryCode: string) {
+    return this.countryService.getPopulationInfo(countryCode);
   }
   @Get("info/flagURL/:countryCode")
   async getFlagURL(@Param("countryCode") countryCode: string) {
