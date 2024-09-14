@@ -26,7 +26,7 @@ export class CountryService {
     const borderInfo = await this.fetchData<CountryDetails>(url, errorMessage);
 
     return {
-      data: borderInfo,
+      data: borderInfo.borders,
     };
   }
 
