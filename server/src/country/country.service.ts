@@ -28,7 +28,7 @@ export class CountryService {
     return {
       data: {
         countryCode: countryInfo.countryCode,
-        name: countryInfo.commonName,
+        commonName: countryInfo.commonName,
         officialName: countryInfo.officialName,
         region: countryInfo.region,
       },
