@@ -5,7 +5,7 @@ import {
   populationCountSchema,
 } from "../types/types.country";
 
-const BASE_URL = "http://localhost:5000/country";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const useAvailableCountries = () => {
   const url = `${BASE_URL}/available`;
