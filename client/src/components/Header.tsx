@@ -1,7 +1,6 @@
 import { Globe } from "lucide-react";
 import { ModeToggle } from "./DarkModeTrigger";
 import Link from "next/link";
-import { Input } from "./ui/input";
 
 export const Header = () => {
   return (
@@ -16,8 +15,6 @@ export const Header = () => {
             <Globe className="h-8 w-8" />
             Countries
           </Link>
-
-          <Input placeholder="Search for a country" />
         </div>
         <ModeToggle />
       </div>
